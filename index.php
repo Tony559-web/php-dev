@@ -27,10 +27,14 @@
 
 
     <form action="inserir.php" method="POST">
-         Nome: <input type="text" name="Nome">
-         RA: <input type="number" name="ra">
+         Nome: <input type="text" name="Nome"
+                        value="<?php echo isset($resultItem) ? $resultItem->NOME : '' ?>">
          <br><br>
-         Email: <input type="text" name="email">
+         RA: <input type="number" name="ra"
+                        value="<?php echo isset($resultItem) ? $resultItem->ra : '' ?>">
+         <br><br>
+         Email: <input type="text" name="email"
+                        value="<?php echo isset($resultItem) ? $resultItem->email : '' ?>">
          <br><br>
          <input type="submit" value="Salvar">
          <input type="reset" value="Limpar">
