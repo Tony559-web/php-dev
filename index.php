@@ -1,3 +1,9 @@
+<?php
+
+    $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : null;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +13,8 @@
 </head>
 <body>
     <form action="login.php" method="POST">
-
+        <?php echo $mensagem ?>
+        <br><br>
         Email: <input type="text" name="email">
         <br><br>
         Senha: <input type="password" name="senha">

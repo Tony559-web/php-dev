@@ -1,6 +1,9 @@
 <?php
 
     include("conexao.php");
+     session_start();
+
+     if (!isset($_SESSION["email"])) {{ header("Location: index.php"); }}
 
     $id = isset($_GET['id']) ? $_GET['id'] : null;
     if($id) {
@@ -27,6 +30,11 @@
 
 
     <form action="inserir.php" method="POST">
+
+          <a href="sair.php">Sair</a>
+
+           <br><br>
+
           <input type="hidden" name="id"
                         value="<?php echo isset($resultItem) ? $resultItem->id : '' ?>">
          Nome: <input type="text" name="Nome"
